@@ -78,6 +78,12 @@ web_modules/
 .next
 out
 
+# Local source material duplicated into public assets
+source/
+
+# macOS metadata
+.DS_Store
+
 # Nuxt.js build / generate output
 .nuxt
 dist
