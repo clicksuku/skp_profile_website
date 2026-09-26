@@ -198,8 +198,9 @@ export default function Home() {
           <div className="about-grid">
             <div className="about-copy">
               <p className="lead">I build teams, platforms, and products that turn ambitious technology into measurable business value.</p>
-              <p>Across 20+ years, I&apos;ve led global engineering teams of 140+ across AI, payments, fintech, commerce, security, and omni-channel experiences. My work spans product ownership, architecture, platform modernization, observability, and GenAI.</p>
-              <p>I&apos;m most interested in meaningful customer and business problems, especially the ones that need both a clear technology vision and the patience to make the details work.</p>
+              <p>Technology and engineering executive with 20+ years of experience building, scaling, and transforming consumer and enterprise technology platforms that generate billions in revenue and serve millions of users. Proven track record of growing engineering organizations to 140+ professionals, leading global teams, managing multi-million-dollar budgets, and contributing to strategic and board-level planning.</p>
+              <p>Combines deep technical expertise in cloud-native architecture, distributed systems, AI/ML, and GenAI with strong business acumen and organizational leadership. Experienced across fintech and payments, omnichannel commerce, security, and enterprise platforms, with a focus on platform modernization, product innovation, and operational excellence.</p>
+              <p>Passionate about building high-performing engineering organizations, defining technology vision, and translating complex business challenges into scalable, customer-centric platforms that drive sustainable growth and measurable business outcomes.</p>
             </div>
             <div className="portrait-wrap">
               <div className="portrait-accent" />
