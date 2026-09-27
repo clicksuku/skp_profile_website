@@ -87,7 +87,7 @@ const experience = [
 const projects = [
   {
     number: "01",
-    title: "ML Zoomcamp 2025 — Airbnb Price & Listing Classifier",
+    title: "ML Zoomcamp — Airbnb Price & Listing Classifier",
     description:
       "A machine learning capstone predicting Airbnb Vienna nightly prices and classifying Host vs Superhost listings, served through FastAPI and deployed with Docker and Kubernetes.",
     tags: ["Machine learning", "FastAPI", "Kubernetes"],
@@ -95,7 +95,7 @@ const projects = [
   },
   {
     number: "02",
-    title: "LLM Zoomcamp 2025 — Payments Card Assistant",
+    title: "LLM Zoomcamp — Payments Card Assistant",
     description:
       "An LLM payments assistant that OCRs card details, validates them through an MCP server, retrieves decline-code context with Qdrant RAG, and tracks quality with Opik evaluation and monitoring.",
     tags: ["LLM engineering", "MCP", "RAG"],
