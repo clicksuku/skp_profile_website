@@ -87,27 +87,67 @@ const experience = [
 const projects = [
   {
     number: "01",
-    title: "LLM Engineering / Zoomcamp 2025",
+    title: "ML Zoomcamp 2025 — Airbnb Price & Listing Classifier",
     description:
-      "A practical LLM engineering project exploring the systems, retrieval, and evaluation patterns needed to move from a language model demo to a dependable application.",
-    tags: ["LLM engineering", "Python", "Evaluation"],
-    href: "https://github.com/clicksuku/SundarkpCode/tree/master/LLM%20Zoomcamp%202025%20Project",
+      "A machine learning capstone predicting Airbnb Vienna nightly prices and classifying Host vs Superhost listings, served through FastAPI and deployed with Docker and Kubernetes.",
+    tags: ["Machine learning", "FastAPI", "Kubernetes"],
+    href: "https://github.com/clicksuku/SundarkpCode/tree/master/ML%20Zoomcamp%202025/FinalProject",
   },
   {
     number: "02",
-    title: "RAG profile analyzer",
+    title: "LLM Zoomcamp 2025 — Payments Card Assistant",
     description:
-      "An AI-based resume analysis experiment using retrieval-augmented generation to ask better questions of a professional profile.",
-    tags: ["RAG", "OpenAI", "Pinecone"],
-    href: "https://sundarkp.substack.com/p/rag-ging-sundarkps-profile-attempting",
+      "An LLM payments assistant that OCRs card details, validates them through an MCP server, retrieves decline-code context with Qdrant RAG, and tracks quality with Opik evaluation and monitoring.",
+    tags: ["LLM engineering", "MCP", "RAG"],
+    href: "https://github.com/clicksuku/SundarkpCode/tree/master/LLM%20Zoomcamp%202025",
   },
   {
     number: "03",
-    title: "RAG and machine learning pipelines",
+    title: "RAG profile analyzer",
     description:
-      "Open-source learning projects covering profile RAG pipelines, Pinecone, OpenAI, Python, and machine learning practice.",
-    tags: ["Machine learning", "RAG", "Data engineering"],
-    href: "https://github.com/clicksuku/SundarkpCode/tree/master/RAG_LLM_Profile(PineCone%2C%20OpenAI%2C%20Python)",
+      "A retrieval-augmented Streamlit app that vectorizes a professional profile with Pinecone and BGE embeddings, then answers questions about it through OpenAI and LangChain.",
+    tags: ["RAG", "Pinecone", "LangChain"],
+    href: "https://github.com/clicksuku/SundarkpCode/blob/master/RAG_LLM_Profile(PineCone%2C%20OpenAI%2C%20Python)/Skp_RAGApp.py",
+  },
+  {
+    number: "04",
+    title: "Data Engineering Zoomcamp Capstone — Olist Commerce",
+    description:
+      "A capstone data pipeline for Olist's Brazilian e-commerce dataset — Mage AI orchestrates ingestion into GCS and BigQuery, with DBT modeling customer, seller, and marketing dimensions.",
+    tags: ["Data engineering", "BigQuery", "dbt"],
+    href: "https://github.com/clicksuku/SundarkpCode/tree/master/DataEngineering%20Course%20%5BBigQuery%2C%20Mage%20AI%2C%20Buckets%2C%20Metabase%2C%20DBT%5D/sundarkp-olist-commerce%20-%20Data%20Engineering%20CapStone%20Project%20%5BBigQuery%2C%20Mage%20AI%2C%20Buckets%2C%20Metabase%2C%20DBT%5D",
+  },
+  {
+    number: "05",
+    title: "SendOpenURLs",
+    description:
+      "A Chrome extension, published on the Chrome Web Store, that emails a user's open browser tabs to Gmail and reopens saved URL lists on demand.",
+    tags: ["Chrome extension", "jQuery", "Browser tooling"],
+    href: "https://github.com/clicksuku/SundarkpCode/tree/master/e-SendOpenURLs%20%5BChrome%20Extn%5D",
+  },
+  {
+    number: "06",
+    title: "YoutubePlaylister",
+    description:
+      "A Django app that catalogs every video across a user's YouTube playlists via the YouTube Data API, so takedown or misplaced videos stay easy to trace and export.",
+    tags: ["Django", "Python", "YouTube API"],
+    href: "https://github.com/clicksuku/SundarkpCode/tree/master/YoutubePlayLister%5BPython%20Django%5D",
+  },
+  {
+    number: "07",
+    title: "Rediff Viewer",
+    description:
+      "A Chrome extension, published on the Chrome Web Store, that rewrites Rediff.com article links to open in ad-free, single-page print mode.",
+    tags: ["Chrome extension", "jQuery", "Browser tooling"],
+    href: "https://github.com/clicksuku/SundarkpCode/tree/master/RediffViewer%5BChrome%20Extn%5D",
+  },
+  {
+    number: "08",
+    title: "Video Resize",
+    description:
+      "A set of shell scripts for batch video and image processing — resizing, renaming, and reformatting media in bulk.",
+    tags: ["Shell scripting", "ffmpeg", "Automation"],
+    href: "https://github.com/clicksuku/SundarkpCode/tree/master/VideoResize%20%5BScript%5D",
   },
 ];
 
@@ -232,7 +272,7 @@ export default function Home() {
           <SectionHeading index="04">Selected thinking</SectionHeading>
           <div className="project-list">
             {projects.map((project) => (
-              <a className="project-item" href={project.href} key={project.number}>
+              <a className="project-item" href={project.href} key={project.number} target="_blank" rel="noreferrer">
                 <span className="project-number">{project.number}</span>
                 <div className="project-body"><h3>{project.title} <ArrowUpRight size={18} /></h3><p>{project.description}</p><div className="tag-row">{project.tags.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div></div>
               </a>
