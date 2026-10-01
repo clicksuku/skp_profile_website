@@ -154,37 +154,110 @@ const projects = [
 const certificates = [
   {
     number: "01",
-    title: "Anthropic Claude Certificates",
-    issuer: "Anthropic · Certificates",
-    description: "Professional learning and certificates focused on Claude, responsible AI, and practical AI-assisted work.",
+    title: "Claude Certified Developer - Foundations",
+    issuer: "Anthropic",
+    description: "Designed for developers building and shipping applications with Claude — covers prompting, tool use, and safe deployment fundamentals.",
+    issuedDate: "2 Aug 2026",
+    credentialId: "ee6e7374-c7dd-4b05-bdaf-59de53220bbc",
     href: undefined,
   },
   {
     number: "02",
-    title: "LLM Engineering Zoomcamp",
-    issuer: "Certificate · September 2025",
-    description: "Applied practice in building, evaluating, and shipping modern LLM applications.",
+    title: "Claude Certified Architect - Foundations",
+    issuer: "Anthropic",
+    description: "Designed for solution architects designing Claude-based systems — covers architecture patterns, integration, and responsible deployment.",
+    issuedDate: "3 Aug 2026",
+    credentialId: "b7d36e3b-4388-42bc-ae10-aaad0606dc12",
     href: undefined,
   },
   {
     number: "03",
-    title: "Data Engineering Professional",
-    issuer: "Professional certification · April 2024",
-    description: "Hands-on data engineering foundations across pipelines, storage, orchestration, and analytics.",
+    title: "Claude Certified Architect - Professional",
+    issuer: "Anthropic",
+    description: "Designed for experienced solution architects — covers advanced architecture, scaling, and governance for production Claude deployments.",
+    issuedDate: "3 Aug 2026",
+    credentialId: "9926d78f-e360-4753-9973-523d187b76b6",
     href: undefined,
   },
   {
     number: "04",
-    title: "CockroachDB Certification",
-    issuer: "Technical certification",
-    description: "Distributed SQL, resilient data architecture, and operating databases at global scale.",
+    title: "Claude Certified Associate - Foundations",
+    issuer: "Anthropic",
+    description: "Designed for client-facing and business roles — covers practical, responsible use of Claude in everyday workflows.",
+    issuedDate: "3 Aug 2026",
+    credentialId: "19e9f61d-60fa-4246-9e3d-d9a70e98c3d3",
     href: undefined,
   },
   {
     number: "05",
+    title: "Machine Learning Zoomcamp Professional",
+    issuer: "DataTalksClub",
+    description: "Applied machine learning and deep learning practice across the DataTalksClub Zoomcamp curriculum.",
+    issuedDate: "Feb 2026",
+    credentialId: "721E75",
+    href: undefined,
+  },
+  {
+    number: "06",
+    title: "LLM Zoomcamp",
+    issuer: "DataTalksClub",
+    description: "Hands-on LLM and RAG engineering — vector search, agentic workflows, and LLM-as-judge evaluation.",
+    issuedDate: "Nov 2025",
+    credentialId: "721E75",
+    href: undefined,
+  },
+  {
+    number: "07",
+    title: "Data Engineering Zoomcamp",
+    issuer: "DataTalksClub",
+    description: "Hands-on data engineering foundations across pipelines, storage, orchestration, and analytics.",
+    issuedDate: "Apr 2024",
+    credentialId: "54D13A",
+    href: undefined,
+  },
+  {
+    number: "08",
+    title: "Enterprise Application Development with CockroachDB II",
+    issuer: "Cockroach Labs",
+    description: "Advanced application patterns for building resilient, distributed applications on CockroachDB.",
+    issuedDate: "Jul 2025",
+    credentialId: "ec482ddbdcf44e82b1a151f166b7b1b0",
+    href: undefined,
+  },
+  {
+    number: "09",
+    title: "Enterprise Application Development with CockroachDB I",
+    issuer: "Cockroach Labs",
+    description: "Core application development practices for building on CockroachDB.",
+    issuedDate: "Jun 2025",
+    credentialId: "cdc419005a574c2a8f83a55fb7042c00",
+    href: undefined,
+  },
+  {
+    number: "10",
+    title: "Building a Highly Resilient Multi-region Database using CockroachDB",
+    issuer: "Cockroach Labs",
+    description: "Designing and operating multi-region, highly resilient CockroachDB deployments.",
+    issuedDate: "Jun 2025",
+    credentialId: "29f65bf36fca49428dac7e4261508e5d",
+    href: undefined,
+  },
+  {
+    number: "11",
+    title: "Introduction to Distributed SQL and CockroachDB",
+    issuer: "Cockroach Labs",
+    description: "Foundations of distributed SQL and CockroachDB's architecture.",
+    issuedDate: "May 2025",
+    credentialId: "857f315a0c264d5db5b34e6954cf2dbc",
+    href: undefined,
+  },
+  {
+    number: "12",
     title: "PMP Certified Professional",
-    issuer: "Project Management Professional",
+    issuer: "Project Management Institute (PMI)",
     description: "Structured leadership across delivery, planning, stakeholders, and complex programs.",
+    issuedDate: "Sep 2010",
+    credentialId: "1361099",
     href: undefined,
   },
 ];
@@ -251,7 +324,7 @@ export default function Home() {
         </section>
 
         <section className="content-section" id="experience">
-          <SectionHeading index="03">Experience</SectionHeading>
+          <SectionHeading index="02">Experiences</SectionHeading>
           <div className="timeline">
             {experience.map((item) => (
               <article className="timeline-item" key={`${item.company}-${item.role}`}>
@@ -269,7 +342,7 @@ export default function Home() {
         </section>
 
         <section className="content-section projects-section" id="projects">
-          <SectionHeading index="04">Selected thinking</SectionHeading>
+          <SectionHeading index="03">Selected thinking</SectionHeading>
           <div className="project-list">
             {projects.map((project) => (
               <a className="project-item" href={project.href} key={project.number} target="_blank" rel="noreferrer">
@@ -281,7 +354,7 @@ export default function Home() {
         </section>
 
         <section className="content-section certificates-section" id="certificates">
-          <SectionHeading index="05">Certificates</SectionHeading>
+          <SectionHeading index="04">Certificates</SectionHeading>
           <div className="certificate-carousel" aria-label="Certificates carousel">
             <div className="certificate-track">
               {visibleCertificates.map((certificate) => (
@@ -290,6 +363,12 @@ export default function Home() {
                   <h3>{certificate.title}</h3>
                   <p className="certificate-issuer">{certificate.issuer}</p>
                   <p>{certificate.description}</p>
+                  {certificate.issuedDate && (
+                    <div className="certificate-meta">
+                      <span>Issued {certificate.issuedDate}</span>
+                      {certificate.credentialId && <span>ID: {certificate.credentialId}</span>}
+                    </div>
+                  )}
                   {certificate.href && <a className="certificate-link" href={certificate.href} target="_blank" rel="noreferrer">Open badge wallet <ArrowUpRight size={15} /></a>}
                 </article>
               ))}

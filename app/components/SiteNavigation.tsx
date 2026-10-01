@@ -19,11 +19,12 @@ export default function SiteNavigation() {
           <span className="rail-line" />
           <nav>
             <a href="/#about"><span>01</span> About</a>
-            <a href="/blog"><span>02</span> Blog</a>
-            <a href="/#experience"><span>03</span> Experience</a>
-            <a href="/#projects"><span>04</span> Projects</a>
-            <a href="/#certificates"><span>05</span> Certificates</a>
-            <a href="/#contact"><span>06</span> Contact</a>
+            <a href="/#experience"><span>02</span> Experiences</a>
+            <a href="/#projects"><span>03</span> Projects</a>
+            <a href="/#certificates"><span>04</span> Certificates</a>
+            <a href="/blog"><span>05</span> Blog</a>
+            <a href="/creatives"><span>06</span> Creatives</a>
+            <a href="/#contact"><span>07</span> Contact</a>
           </nav>
         </div>
         <div className="rail-bottom">

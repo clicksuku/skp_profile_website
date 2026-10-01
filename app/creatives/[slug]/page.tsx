@@ -1,21 +1,21 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import SiteNavigation from "../../components/SiteNavigation";
-import { formatPostDate, getBlogPosts } from "../posts";
+import { formatPostDate, getCreativePosts } from "../../blog/posts";
 
 export const revalidate = 3600;
 
-export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function CreativePostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = (await getBlogPosts()).find((item) => item.slug === slug);
+  const post = (await getCreativePosts()).find((item) => item.slug === slug);
   if (!post) notFound();
 
   return (
     <main className="blog-page">
       <SiteNavigation />
       <article className="blog-article">
-        <Link className="blog-back-link" href="/blog">← All posts</Link>
-        <p className="eyebrow"><span className="section-index">05</span> Writing &amp; ideas</p>
+        <Link className="blog-back-link" href="/creatives">← All posts</Link>
+        <p className="eyebrow"><span className="section-index">06</span> Outside the day job</p>
         <h1>{post.title}</h1>
         <time className="blog-article-date" dateTime={post.publishedAt}>{formatPostDate(post.publishedAt)}</time>
         <div className="blog-article-body" dangerouslySetInnerHTML={{ __html: post.content }} />

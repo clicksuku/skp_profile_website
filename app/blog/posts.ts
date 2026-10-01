@@ -13,7 +13,20 @@ export type BlogPost = {
   content: string;
 };
 
-export async function getBlogPosts(): Promise<BlogPost[]> {
+// Slugs of posts that read as personal/creative writing (film, travel, poetry)
+// rather than tech/professional posts — these are shown on the Creatives page instead of Blog.
+const CREATIVE_SLUGS = new Set([
+  "anandfilm-hrishikesh-mukherjee-ikiru",
+  "2d4",
+  "paradise-unexplored-shillong-cherapunjee-lush-green-and-rain",
+  "21-01-11",
+  "paradise-unexplored-guide-driver-and-the-fellow-wanderers",
+  "paradise-unexplored-my-trip-to-the-north-east-first-day-n-kolkata",
+  "the-white-tiger-it-is-more-of-a-black-and-white-picture",
+  "interesting-ads-intent-and-their-impact",
+]);
+
+async function fetchAllPosts(): Promise<BlogPost[]> {
   const response = await fetch(feedUrl, {
     next: { revalidate: 3600 },
     headers: { "User-Agent": "SundaraKumarPortfolio/1.0" },
@@ -54,6 +67,16 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
       }),
     }];
   });
+}
+
+export async function getBlogPosts(): Promise<BlogPost[]> {
+  const posts = await fetchAllPosts();
+  return posts.filter((post) => !CREATIVE_SLUGS.has(post.slug));
+}
+
+export async function getCreativePosts(): Promise<BlogPost[]> {
+  const posts = await fetchAllPosts();
+  return posts.filter((post) => CREATIVE_SLUGS.has(post.slug));
 }
 
 export function formatPostDate(value: string) {
