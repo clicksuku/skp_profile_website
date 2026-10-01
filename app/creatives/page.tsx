@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import SiteNavigation from "../components/SiteNavigation";
-import { formatPostDate, getCreativePosts } from "../blog/posts";
+import { getCreativePosts } from "../blog/posts";
+import CreativesTabs from "./CreativesTabs";
 
 export const revalidate = 3600;
 
@@ -21,19 +21,7 @@ export default async function CreativesPage() {
             Open on Substack <ArrowUpRight size={16} />
           </a>
         </div>
-        <div className="blog-post-list">
-          {posts.map((post, index) => (
-            <article className="blog-post-card" key={post.slug}>
-              <span className="blog-post-number">{String(index + 1).padStart(2, "0")}</span>
-              <div className="blog-post-copy">
-                <time dateTime={post.publishedAt}>{formatPostDate(post.publishedAt)}</time>
-                <h2><Link href={`/creatives/${post.slug}`}>{post.title}</Link></h2>
-                <p>{post.summary}</p>
-                <Link className="blog-read-link" href={`/creatives/${post.slug}`}>Read article <ArrowUpRight size={14} /></Link>
-              </div>
-            </article>
-          ))}
-        </div>
+        <CreativesTabs posts={posts} />
       </div>
     </main>
   );
