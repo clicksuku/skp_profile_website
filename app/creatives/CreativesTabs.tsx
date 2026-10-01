@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { ArrowUpRight, Images } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { formatPostDate, type BlogPost } from "../blog/posts";
+import type { Photo } from "./photos";
 
 const PHOTOS_ALBUM_URL = "https://photos.app.goo.gl/1uCmFaHnxjMbwU9E6";
 
-export default function CreativesTabs({ posts }: { posts: BlogPost[] }) {
+export default function CreativesTabs({ posts, photos }: { posts: BlogPost[]; photos: Photo[] }) {
   const [tab, setTab] = useState<"posts" | "photos">("posts");
 
   return (
@@ -38,12 +39,27 @@ export default function CreativesTabs({ posts }: { posts: BlogPost[] }) {
       )}
 
       {tab === "photos" && (
-        <a className="photo-embed" href={PHOTOS_ALBUM_URL} target="_blank" rel="noreferrer">
-          <Images size={34} />
-          <h2>Photo album</h2>
-          <p>Travel, people, and places outside work — hosted on Google Photos.</p>
-          <span className="photo-embed-cta">Open album on Google Photos <ArrowUpRight size={15} /></span>
-        </a>
+        <>
+          <div className="photo-grid">
+            {photos.map((photo) => (
+              <a
+                className="photo-card"
+                key={photo.id}
+                href={PHOTOS_ALBUM_URL}
+                target="_blank"
+                rel="noreferrer"
+                title="Open on Google Photos"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" referrerPolicy="no-referrer" />
+                <span className="photo-card-caption">{photo.alt}</span>
+              </a>
+            ))}
+          </div>
+          <a className="text-link photo-album-link" href={PHOTOS_ALBUM_URL} target="_blank" rel="noreferrer">
+            View full album on Google Photos <ArrowUpRight size={16} />
+          </a>
+        </>
       )}
     </>
   );

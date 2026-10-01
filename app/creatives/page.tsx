@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import SiteNavigation from "../components/SiteNavigation";
 import { getCreativePosts } from "../blog/posts";
+import { photos } from "./photos";
 import CreativesTabs from "./CreativesTabs";
 
 export const revalidate = 3600;
@@ -21,7 +22,7 @@ export default async function CreativesPage() {
             Open on Substack <ArrowUpRight size={16} />
           </a>
         </div>
-        <CreativesTabs posts={posts} />
+        <CreativesTabs posts={posts} photos={photos} />
       </div>
     </main>
   );
