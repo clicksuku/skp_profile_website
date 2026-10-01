@@ -7,8 +7,9 @@ export default function SiteNavigation() {
         <a className="mobile-mark" href="/#top" aria-label="Sundara Kumar home">SK</a>
         <nav className="mobile-nav" aria-label="Mobile navigation">
           <a href="/#about">About</a>
-          <a href="/blog">Blog</a>
           <a href="/#experience">Work</a>
+          <a href="/blog">Blog</a>
+          <a href="/creatives">Creatives</a>
           <a href="/#contact">Contact</a>
         </nav>
       </header>

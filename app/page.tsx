@@ -400,6 +400,7 @@ export default function Home() {
             <a href="https://github.com/clicksuku/SundarkpCode" target="_blank" rel="noreferrer"><Github size={16} /> GitHub repository</a>
             <a href="https://www.linkedin.com/in/sundarkp/" target="_blank" rel="noreferrer"><Linkedin size={16} /> LinkedIn</a>
             <a href="https://sundarkp.substack.com/" target="_blank" rel="noreferrer"><ArrowUpRight size={16} /> Blog</a>
+            <a href="/creatives"><ArrowUpRight size={16} /> Creatives</a>
             <a href="https://linktr.ee/sundarkp" target="_blank" rel="noreferrer"><ArrowUpRight size={16} /> Linktree</a>
           </div>
           <a className="cover-letter-link" href="/cover-letter.pdf" target="_blank" rel="noreferrer">Read my cover letter <ArrowUpRight size={15} /></a>
